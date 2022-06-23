@@ -1,0 +1,248 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+  ignorenonframetext,
+  twocolumn]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usetheme[]{Madrid}
+\usecolortheme{seahorse}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Graphing Stuff},
+  pdfauthor={Stats Central},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usetheme{MAdrid}
+ \usepackage{caption}
+ \usepackage[absolute,overlay]{textpos}
+\usepackage[utf8]{inputenc}
+ \usepackage{graphbox}
+\usepackage{comment}
+
+
+\setlength{\fboxsep}{.8em}
+
+
+\logo{
+\includegraphics[height=0.5cm]{figs/unswlandscape.png}}
+\titlegraphic{\includegraphics[width=0.4\textwidth]{figs/logo.png}}
+\definecolor{UNSWyellow}{RGB}{249,220,0} 
+\definecolor{UNSWlgreen}{RGB}{204,235,201} 
+\definecolor{UNSWdblue}{RGB}{75,95,203} 
+\definecolor{UNSWdgreen}{RGB}{79,200,127} 
+\definecolor{UNSWdred}{RGB}{242,99,82} 
+
+
+\definecolor{UNSWlblue}{RGB}{198,206,240} 
+
+\setbeamercolor{palette primary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette secondary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette tertiary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette quaternary}{bg=UNSWdgreen,fg=black}
+\setbeamercolor{structure}{fg=UNSWdblue} % itemize, enumerate, etc
+
+% \setbeamercolor{section in head/foot}{fg=UNSWdblue} 
+
+% Sections and subsections should not get their own damn slide.
+%--------------------------------------------------------------
+\AtBeginPart{}
+\AtBeginSection{}
+\AtBeginSubsection{}
+\AtBeginSubsubsection{}
+
+
+\newenvironment{cols}[1][]{}{}
+
+\newenvironment{col}[1]{\begin{minipage}{#1}\ignorespaces}{%
+\end{minipage}
+\ifhmode\unskip\fi
+\aftergroup\useignorespacesandallpars}
+
+\def\useignorespacesandallpars#1\ignorespaces\fi{%
+#1\fi\ignorespacesandallpars}
+
+\makeatletter
+\def\ignorespacesandallpars{%
+  \@ifnextchar\par
+    {\expandafter\ignorespacesandallpars\@gobble}%
+    {}%
+}
+\makeatother
+
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Graphing Stuff}
+\subtitle{With SPSS}
+\author{Stats Central}
+\date{}
+\institute{UNSW}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}[fragile]{What am I talking about?}
+\protect\hypertarget{what-am-i-talking-about}{}
+\begin{itemize}
+\tightlist
+\item
+  Making good graphics for publication
+\item
+  Basic principles of graphing
+\item
+  Building blocks of graphs
+\item
+  Examples of common types of graph
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Statistical Graphs}
+\protect\hypertarget{statistical-graphs}{}
+``\ldots{} statistical graphics are instruments to help people reason
+about quantitative information''\footnote<.->{Tufte, E. R. 2001. `The
+  Visual Display of Quantitative Information', p.~91}
+
+\begin{itemize}
+\tightlist
+\item
+  Should be illustrative
+\item
+  Should be helpful
+\end{itemize}
+
+Tell your story
+\end{frame}
+
+\begin{frame}{Basic elements of a plot}
+\protect\hypertarget{basic-elements-of-a-plot}{}
+\begin{itemize}
+\tightlist
+\item
+  Graph panel
+\item
+  Scales, labels, tick marks
+\item
+  Plotting symbols, line types, colour
+\item
+  Reference lines
+\item
+  Legend
+\item
+  Captions
+\end{itemize}
+
+Maximise the ``data-ink ratio''\footnote<.->{Tufte, E. R. 2001. `The
+  Visual Display of Quantitative Information', p.~96}
+
+\begin{itemize}
+\tightlist
+\item
+  Use ink for data, not unnecessary decoration
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Basic guidelines of graphing data}
+\protect\hypertarget{basic-guidelines-of-graphing-data}{}
+\textbf{Make the data stand out}
+
+\begin{itemize}
+\tightlist
+\item
+  Let the data fill the graph panel
+\item
+  Don't force axes to start at zero if data values are not close to zero
+  (could use ``break'' marks to show axis does not start at zero)
+\item
+  Label the axes clearly
+\item
+  Use symbols, lines, colours etc. that highlight the data
+\item
+  Use reference lines or grids with care
+\item
+  Put legends outside the graph panel
+\item
+  Put notes in the caption or text
+\item
+  Make sure the graph remains clear if made smaller (e.g.~for
+  publication)
+\end{itemize}
+\end{frame}
+
+\end{document}

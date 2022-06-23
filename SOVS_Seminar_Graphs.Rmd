@@ -1,0 +1,174 @@
+---
+title: Graphing Stuff
+subtitle: With SPSS
+author: Stats Central
+institute: UNSW
+fontsize: 11pt
+params: 
+  R:  false
+  SPSS: true 
+# output:
+#   revealjs::revealjs_presentation:
+#     theme: sky
+#     highlight: pygments
+#     center: true
+#     transition: none
+output:
+  beamer_presentation:
+   includes:
+    in_header: unsw_beamer.tex
+   keep_tex: true
+   latex_engine: pdflatex
+   theme: Madrid
+   colortheme: seahorse
+   slide_level: 3
+make149: true
+classoption:
+- twocolumn
+---
+
+```{r setup, include = FALSE, fig.align = "center"}
+
+require(knitr)
+knitr::opts_chunk$set(echo = TRUE, fig.width=9, fig.height = 5, fig.align = "center")
+
+```
+
+```{r include = F, message = F, warning = F}
+
+#install.packages("ggpubr", dependencies = TRUE)
+
+library(MindOnStats)
+library(RcmdrMisc)
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(boot)
+library(kableExtra)
+library(ggplot2)
+```
+
+
+### What am I talking about? {.fragile} 
+
+- Making good graphics for publication
+- Basic principles of graphing
+- Building blocks of graphs
+- Examples of common types of graph
+
+
+### Statistical Graphs
+
+“… statistical graphics are instruments to help people reason about quantitative information”^[Tufte, E. R. 2001. 'The Visual Display of Quantitative Information', p. 91]
+
+- Should be illustrative
+- Should be helpful
+
+Tell your story
+
+
+### Basic elements of a plot
+
+- Graph panel
+- Scales, labels, tick marks
+- Plotting symbols, line types, colour
+- Reference lines
+- Legend
+- Captions
+
+
+Maximise the “data-ink ratio”^[Tufte, E. R. 2001. 'The Visual Display of Quantitative Information', p. 96]
+
+- Use ink for data, not unnecessary decoration
+
+
+### Basic guidelines of graphing data
+
+**Make the data stand out**
+
+- Let the data fill the graph panel
+- Don’t force axes to start at zero if data values are not close to zero (could use “break” marks to show axis does not start at zero)
+- Label the axes clearly
+- Use symbols, lines, colours etc. that highlight the data
+- Use reference lines or grids with care
+- Put legends outside the graph panel
+- Put notes in the caption or text
+- Make sure the graph remains clear if made smaller (e.g. for publication)
+
+### Colour
+
+Colour - symbols and lines
+
+some people are colourblind
+hard to see differences especially among reds, oranges, yellows and greens
+there are different types of colourblindness
+don’t use red and green together
+check out ColorBrewer for colour palettes (in R, RColorBrewer package)
+
+Avoid “chartjunk”^[Tufte, E. R. 2001. 'The Visual Display of Quantitative Information', p. 104] - more about this later
+
+###
+
+Make sure the graph is properly understood
+
+Put all necessary details about the graph in the caption
+describe everything that is graphed
+clearly explain any error bars
+note important features in the data
+describe the conclusions that are made from the data shown
+
+### Variation
+
+Two areas for showing variation:
+
+- Empirical variation of data - exploring data
+- Variation of statistics - exploring data and model output
+
+### Empirical variation - discrete data
+
+Data: A sample of three types of gastropod shell was scored as occupied by a hermit crab or empty5.
+
+Question: Do hermit crabs prefer a certain shell type?
+
+```{r}
+# create optometrist N data
+opt1 <- data.frame(Occupation=c("Optometrist", "Optometrist", "Optometrist", "Optometrist", "Optometrist","Ophthamologist","Ophthamologist","Ophthamologist","Ophthamologist","Ophthamologist"),
+                 Location=c("Major City", "Inner Regional","Outer Regional","Remote","Rural","Major City", "Inner Regional","Outer Regional","Remote","Rural"),
+                 N=c(4221,	811,	252,	23,	17,
+                     818,  121,	23,	NA,   NA),
+                 FTE=c(3796.5,   765.3,	242.5,	24.0,	16.9,
+                       850.7,	127.1,	27.0,	NA,   NA),
+                 FTErate=c(20.7,	17.0,	11.8,	8.3,	8.4,
+                       4.6,	2.8,	1.3,	NA,   NA))
+
+opttable<-opt1 %>%
+   dplyr::select(Occupation, Location,N) %>%
+   rename(value=N) %>%
+   pivot_wider(values_from = value, names_from = Location)
+opt2<-opt1 %>%
+   dplyr::select(Occupation, Location, FTE) %>%
+   rename(value=FTE) %>%
+   pivot_wider(values_from = value, names_from = Location)
+opt3<-opt1 %>%
+   dplyr::select(Occupation, Location, FTErate) %>%
+   rename(value=FTErate) %>%
+   pivot_wider(values_from = value, names_from = Location)
+opttable <- rbind(opttable,opt2, opt3)
+rm(opt2,opt3)
+opttable%>% 
+   kbl() %>%
+  kable_classic(full_width = F) %>%
+  pack_rows("N", 1, 2) %>%
+  pack_rows("FTE", 3, 4) %>%
+  pack_rows("FTE per 100,000", 5, 6) 
+
+
+# bar plot for Ns. Not so great because we can't 
+
+#
+
+# Table 2.1: Full-time equivalent (FTE) number and rate of eye-care providers, by remoteness area, 2019 Source: AIHW analysis of National Health Workforce Dataset (DOH 2020b)
+					
+
+```
+

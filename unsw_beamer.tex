@@ -1,0 +1,57 @@
+\usetheme{MAdrid}
+ \usepackage{caption}
+ \usepackage[absolute,overlay]{textpos}
+\usepackage[utf8]{inputenc}
+ \usepackage{graphbox}
+\usepackage{comment}
+
+
+\setlength{\fboxsep}{.8em}
+
+
+\logo{
+\includegraphics[height=0.5cm]{figs/unswlandscape.png}}
+\titlegraphic{\includegraphics[width=0.4\textwidth]{figs/logo.png}}
+\definecolor{UNSWyellow}{RGB}{249,220,0} 
+\definecolor{UNSWlgreen}{RGB}{204,235,201} 
+\definecolor{UNSWdblue}{RGB}{75,95,203} 
+\definecolor{UNSWdgreen}{RGB}{79,200,127} 
+\definecolor{UNSWdred}{RGB}{242,99,82} 
+
+
+\definecolor{UNSWlblue}{RGB}{198,206,240} 
+
+\setbeamercolor{palette primary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette secondary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette tertiary}{bg=UNSWyellow,fg=black}
+\setbeamercolor{palette quaternary}{bg=UNSWdgreen,fg=black}
+\setbeamercolor{structure}{fg=UNSWdblue} % itemize, enumerate, etc
+
+% \setbeamercolor{section in head/foot}{fg=UNSWdblue} 
+
+% Sections and subsections should not get their own damn slide.
+%--------------------------------------------------------------
+\AtBeginPart{}
+\AtBeginSection{}
+\AtBeginSubsection{}
+\AtBeginSubsubsection{}
+
+
+\newenvironment{cols}[1][]{}{}
+
+\newenvironment{col}[1]{\begin{minipage}{#1}\ignorespaces}{%
+\end{minipage}
+\ifhmode\unskip\fi
+\aftergroup\useignorespacesandallpars}
+
+\def\useignorespacesandallpars#1\ignorespaces\fi{%
+#1\fi\ignorespacesandallpars}
+
+\makeatletter
+\def\ignorespacesandallpars{%
+  \@ifnextchar\par
+    {\expandafter\ignorespacesandallpars\@gobble}%
+    {}%
+}
+\makeatother
+
