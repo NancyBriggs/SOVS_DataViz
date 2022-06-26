@@ -1,10 +1,12 @@
 
 # SOVS Data Visualisation for Early Career Researchers
-
-## Nancy Briggs
+Seminar, September 1, 2022
+ 
+ <font size="3"> Nancy Briggs
 [Stats Central](https://www.analytical.unsw.edu.au/facilities/stats-central){:target="_blank" rel="noopener"}
-
-## June 29, 2022
+ </font>
+ 
+## June 29, 2022: Audience Participation!
 
 For the seminar (Sept 1), I'd like a bit of input from you!
 
@@ -45,7 +47,9 @@ Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and envir
 Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. 
 https://allisonhorst.github.io/palmerpenguins/
 
-<img align="left" source="figs/logo.png"> <img align="right" source="figs/unswlandscape.png">
+Artwork by @allison_horst
+
+<img align="left" src="figs/logo.png"> <img align="right" src="figs/unswlandscape.png">
 
 
 
