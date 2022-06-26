@@ -5,7 +5,7 @@ Seminar, September 1, 2022
 <font size="3"> 
 Nancy Briggs
  
-[Stats Central](https://www.analytical.unsw.edu.au/facilities/stats-central){:target="_blank" rel="noopener"}
+[Stats Central](https://www.analytical.unsw.edu.au/facilities/stats-central)
 
 </font>
  
@@ -13,9 +13,9 @@ Nancy Briggs
 
 For the seminar (Sept 1), I'd like a bit of input from you!
 
-Please download this dataset: [penguins.csv]{https://nancybriggs.github.io/SOVS_DataViz/penguins.csv}
+Please download this dataset: [penguins.csv](https://nancybriggs.github.io/SOVS_DataViz/penguins.csv)
 
-![](figs/lter_penguins.png)
+![height=50%](figs/lter_penguins.png)
 
 This dataset contains data from physiological measures of penguins from three islands in the Palmer Archipelago, Antarctica. Variables included are:
 
@@ -52,8 +52,9 @@ https://allisonhorst.github.io/palmerpenguins/
 
 Artwork by @allison_horst
 
-<height="10" img align="left" src="figs/logo.png"> 
-<height="10"  img align="right" src="figs/unswlandscape.png">
+
+![height=70%](figs/figs/logo.png)
+![height=10%](figs/figs/unswlandscape.png)
 
 
 
