@@ -2,40 +2,47 @@
 SOVS Data Visualisation for Early Career Researchers
 Nancy Briggs
 [Stats Central](https://www.analytical.unsw.edu.au/facilities/stats-central){:target="_blank" rel="noopener"}
-Sept 1, 2022
+
+*June 29, 2022*
+For the seminar (Sept 1), I'd like a bit of input from you!
+
+Please download this dataset: [penguins.csv]{https://nancybriggs.github.io/SOVS_DataViz/penguins.csv}
+
+![](figs/ltr_penguins.png)
+
+This dataset contains data from physiological measures of penguins from three islands in the Palmer Archipelago, Antarctica. Variables included are:
+
+- species (3 levels)
+- island (3 levels)
+- bill_length_mm (length of bill in mm)
+- bill_depth_mm (depth of bill in mm)
+- flipper_length_mm (length of flipper in mm)
+- body_mass_g (mass in grams)
+- sex (2 levels)
+- year (3 levels)
+
+Now here's where I need your participation! I'd like for you to think of a research question based on the available variables in the dataset, and make a plot that will help you to answer the question.  You don't have to do any analysis on the data, just the plot.
+
+Then!  Save the plot, and email it to me at *nancy.briggs@unsw.edu.au* by _August 12_.  Tell me what your research question was, what the plot tells you about that question, and whether you think the plot was successful, given your goals.
+
+I'll use some of the submitted plots in the talk (anonymously)!
+
+So, to summarise:
+
+1. Download the [data]{https://nancybriggs.github.io/SOVS_DataViz/penguins.csv}
+2. Come up with a research question
+3. Make a plot
+4. Send the plot to me (nancy.briggs@unsw.edu.au) by Friday, August 12. Let me know what the question was, and whether you feel the plot helped you answer the question.
+
+![](figs/culmen_depth.png)
 
 
-### Feedback
+Gorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081
 
-Your feedback would be much appreciated. [Click here](https://docs.google.com/forms/d/e/1FAIpQLSe-ZeuPd_Lr5pm8y_-QnPkL0J5OOGRmBZwn0cmSQ1XVrJP1Xw/viewform){:target="_blank" rel="noopener"}
 
-### Lecture notes
-
-These will be put up as we go (so some links will not work). Save lecture notes and exercises for yourself, this web page and all links (including recordings) will be taken down **one week** after the course. Recordings of the lectures will be uploaded at the end of each day.
-
-* 1 --- Introduction and descriptive statistics 
-[ [slides] ](01_final/slides/01R-introduction.pdf){:target="_blank" rel="noopener"}
-
-### Exercises 
+Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. 
+https://allisonhorst.github.io/palmerpenguins/
 
 
 
-### Resources
 
-
-
-#### Further reading
-
-* Nature [article](https://www.nature.com/articles/d41586-019-00857-9) on statistical significance
-* American statistician [special issue](https://www.tandfonline.com/toc/utas20/73/sup1) and [editorial](https://www.tandfonline.com/doi/full/10.1080/00031305.2019.1583913)
-* [Odds ratios](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1112884/) and relative risk
-
-
-
-#### Tidyverse
-
-Lots more about the `tidyverse` is available in the free online [R for Data Science](https://r4ds.had.co.nz/){:target="_blank" rel="noopener"} textbook by Hadley Wickham as well as:
-
-* `dplyr` [cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf){:target="_blank" rel="noopener"} and the [vignette](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html){:target="_blank" rel="noopener"}.
-* `ggplot2` [cheatsheet](https://www.maths.usyd.edu.au/u/UG/SM/STAT3022/r/current/Misc/data-visualization-2.1.pdf){:target="_blank" rel="noopener"}. Also, have a look at the extensive [R graph gallery](https://www.r-graph-gallery.com/){:target="_blank" rel="noopener"} for code for every possible plot you can imagine. There's also a [book](https://ggplot2-book.org/index.html){:target="_blank" rel="noopener"} by Hadley Wickham about `ggplot2` for when you really want to delve deeper into the package.
-* [Markdown](https://rmarkdown.rstudio.com/lesson-1.html){:target="_blank" rel="noopener"}
