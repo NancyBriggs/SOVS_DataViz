@@ -2,9 +2,12 @@
 # SOVS Data Visualisation for Early Career Researchers
 Seminar, September 1, 2022
  
- <font size="3"> Nancy Briggs
+<font size="3"> 
+Nancy Briggs
+ 
 [Stats Central](https://www.analytical.unsw.edu.au/facilities/stats-central){:target="_blank" rel="noopener"}
- </font>
+
+</font>
  
 ## June 29, 2022: Audience Participation!
 
@@ -49,7 +52,8 @@ https://allisonhorst.github.io/palmerpenguins/
 
 Artwork by @allison_horst
 
-<img align="left" src="figs/logo.png"> <img align="right" src="figs/unswlandscape.png">
+<height="10" img align="left" src="figs/logo.png"> 
+<height="10"  img align="right" src="figs/unswlandscape.png">
 
 
 
